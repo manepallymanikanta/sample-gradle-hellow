@@ -17,7 +17,7 @@
 @if "%DEBUG%" == "" @echo off
 @rem ##########################################################################
 @rem
-@rem  java-helloworld startup script for Windows
+@rem  sample-gradle-hellow startup script for Windows
 @rem
 @rem ##########################################################################
 
@@ -32,7 +32,7 @@ set APP_HOME=%DIRNAME%..
 @rem Resolve any "." and ".." in APP_HOME to make it shorter.
 for %%i in ("%APP_HOME%") do set APP_HOME=%%~fi
 
-@rem Add default JVM options here. You can also use JAVA_OPTS and JAVA_HELLOWORLD_OPTS to pass JVM options to this script.
+@rem Add default JVM options here. You can also use JAVA_OPTS and SAMPLE_GRADLE_HELLOW_OPTS to pass JVM options to this script.
 set DEFAULT_JVM_OPTS=
 
 @rem Find java.exe
@@ -67,20 +67,20 @@ goto fail
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\gs-gradle-0.1.1.jar;%APP_HOME%\lib\joda-time-2.2.jar
+set CLASSPATH=%APP_HOME%\lib\sample-gradle-hellow-2.0-SNAPSHOT.jar;%APP_HOME%\lib\joda-time-2.2.jar
 
 
-@rem Execute java-helloworld
-"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %JAVA_HELLOWORLD_OPTS%  -classpath "%CLASSPATH%" hello.HelloWorld %*
+@rem Execute sample-gradle-hellow
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %SAMPLE_GRADLE_HELLOW_OPTS%  -classpath "%CLASSPATH%" hello.HelloWorld %*
 
 :end
 @rem End local scope for the variables with windows NT shell
 if "%ERRORLEVEL%"=="0" goto mainEnd
 
 :fail
-rem Set variable JAVA_HELLOWORLD_EXIT_CONSOLE if you need the _script_ return code instead of
+rem Set variable SAMPLE_GRADLE_HELLOW_EXIT_CONSOLE if you need the _script_ return code instead of
 rem the _cmd.exe /c_ return code!
-if  not "" == "%JAVA_HELLOWORLD_EXIT_CONSOLE%" exit 1
+if  not "" == "%SAMPLE_GRADLE_HELLOW_EXIT_CONSOLE%" exit 1
 exit /b 1
 
 :mainEnd
