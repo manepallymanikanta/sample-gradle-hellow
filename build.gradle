@@ -3,7 +3,11 @@ apply plugin: 'application'
 
 mainClassName = 'hello.HelloWorld'
 
+<<<<<<< HEAD
 version = 1.0-SNAPSHOT
+=======
+version = 2.0-SNAPSHOT
+>>>>>>> 56b15bf2e229ae2966a505452c702db0e20453a9
 
 repositories {
     mavenCentral()
@@ -52,5 +56,13 @@ artifactory {
     }
     resolve {
         repoKey = 'jcenter'
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
     }
 }
