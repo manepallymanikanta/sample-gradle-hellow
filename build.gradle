@@ -3,12 +3,11 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath group:'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: 'latest.release'
-        // classpath "org.jfrog.buildinfo:build-info-extractor-gradle:latest.release"
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:latest.release"
     }
 }
 
-version = '2.0-SNAPSHOT'
+version = currentVersion
 
 apply plugin: 'com.jfrog.artifactory'
 apply plugin: 'java'
@@ -20,9 +19,6 @@ mainClassName = 'hello.HelloWorld'
 repositories {
     mavenCentral()
 }
-
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
 
 dependencies {
     implementation "joda-time:joda-time:2.2"
@@ -42,8 +38,8 @@ artifactory {
     publish {
         repository {
             repoKey = 'gradle_base_repo' // The Artifactory repository key to publish to
-            username = 'admin' // The publisher user name
-            password = "Admin@123" // The publisher password
+            username = '${artifactory_user}' // The publisher user name
+            password = "${artifactory_password}" // The publisher password
         }
         defaults {
             // Reference to Gradle publications defined in the build script.
