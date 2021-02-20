@@ -37,7 +37,7 @@ publishing {
 }
 
 artifactory {
-    contextUrl = 'http://localhost:8082/artifactory'
+    contextUrl = 'https://localhost:8082/artifactory'
     publish {
         repository {
             repoKey = 'gradle_base_repo' // The Artifactory repository key to publish to
