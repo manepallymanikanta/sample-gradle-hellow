@@ -3,8 +3,10 @@ apply plugin: 'application'
 
 mainClassName = 'hello.HelloWorld'
 
-repositories { 
-    mavenCentral() 
+version = 2.0-SNAPSHOT
+
+repositories {
+    mavenCentral()
 }
 
 sourceCompatibility = 1.8
@@ -18,4 +20,12 @@ dependencies {
 jar {
     archiveBaseName = 'gs-gradle'
     archiveVersion =  '0.1.2'
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
 }
