@@ -55,11 +55,3 @@ artifactory {
         repoKey = 'jcenter'
     }
 }
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-        }
-    }
-}
